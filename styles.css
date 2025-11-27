@@ -495,3 +495,35 @@ body {
     border-color: #7a0b0b;
     transform: translateY(-2px);
 }
+
+/* Stats Section */
+.stat-item {
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Accordion Customization */
+.accordion-button:not(.collapsed) {
+    color: #980E0E;
+    background-color: rgba(152, 14, 14, 0.05);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+
+.accordion-button:focus {
+    border-color: #980E0E;
+    box-shadow: 0 0 0 0.25rem rgba(152, 14, 14, 0.25);
+}
+
+/* Testimonials */
+.testimonials-section .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonials-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
