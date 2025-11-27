@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     createNavbar();
+    createFooter();
     setActiveLink();
     initScrollEffect();
 });
@@ -26,6 +27,38 @@ function createNavbar() {
 
     // Insere o navbar no início do body
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
+}
+
+function createFooter() {
+    const footerHTML = `
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Minimundo</h3>
+                <p>Uma experiência mágica onde o mundo cabe na palma da sua mão. Venha conhecer nossas miniaturas e se encantar.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <a href="index.html">Home</a>
+                <a href="ingressos.html">Ingressos</a>
+                <a href="parque.html">O Parque</a>
+                <a href="grife.html">Grife</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>Rua das Miniaturas, 123</p>
+                <p>Gramado - RS</p>
+                <p>(54) 3286-1234</p>
+                <p>contato@minimundo.com.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Minimundo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', footerHTML);
 }
 
 function setActiveLink() {
