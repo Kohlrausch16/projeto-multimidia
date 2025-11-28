@@ -1,0 +1,134 @@
+/* CONTAINER PRINCIPAL */
+.timeline-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat';
+}
+
+/* BLOCO BASE */
+.timeline-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+}
+
+/* BLOCO INVERTIDO (imagem à esquerda) */
+.timeline-block.inverse {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl; /* Inverte tudo sem precisar duplicar CSS */
+}
+
+.timeline-block.inverse > * {
+    direction: ltr; /* Mantém o conteúdo normal */
+}
+
+/* CORES DOS BLOCOS */
+.block-red {
+    background: #a61919;
+}
+
+.block-blue {
+    background: #134a9c;
+}
+
+.block-green {
+    background: #1b7f2a;
+}
+
+.block-yellow {
+    background: #d7d92f;
+}
+
+/* ÁREA DE TEXTO */
+.block-text {
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.block-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.block-text p {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/* TEXTO ESCURO NO FUNDO AMARELO */
+.block-yellow .block-text {
+    color: #333;
+}
+
+/* ÁREA DE IMAGEM */
+.block-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.block-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* EFEITO EM ZIG-ZAG (CORTE LATERAL) */
+.timeline-block::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    transform: skewX(-25deg);
+    background: inherit;
+    right: -70px;
+    z-index: 1;
+}
+
+.timeline-block.inverse::after {
+    left: -70px;
+    right: auto;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 850px) {
+
+    .timeline-block,
+    .timeline-block.inverse {
+        grid-template-columns: 1fr;
+        direction: ltr !important;
+        min-height: auto;
+    }
+
+    .timeline-block::after,
+    .timeline-block.inverse::after {
+        display: none; /* remove desenho lateral no mobile */
+    }
+
+    .block-img {
+        height: 220px;
+    }
+
+    .block-text {
+        padding: 25px;
+    }
+
+    .block-text h2 {
+        font-size: 30px;
+    }
+
+    .block-text p {
+        font-size: 16px;
+    }
+}
