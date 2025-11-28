@@ -1,0 +1,130 @@
+body {
+    font-family: 'Montserrat';
+    background-color: #F6F5F2;
+    padding: 20px;
+    margin: 0;
+    padding-top: 12%;
+}
+
+hr{
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 7%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-family: 'UnifrakturMaguntia', cursive;
+    color: black
+}
+
+.newspaper-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+    width: 60%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Cada jornal */
+.newspaper-item {
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.newspaper-item img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* Hover */
+.newspaper-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.25);
+}
+
+.edition-panel {
+    grid-column: 1 / -1 !important;
+    background: #9d2d2c;
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.edition-panel.hidden {
+    display: none;
+}
+
+.panel-content {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    gap: 30px;
+}
+
+.panel-content img {
+    width: 220px;
+    border-radius: 6px;
+}
+
+.panel-text h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+}
+
+.panel-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 1rem;
+    transition: opacity 0.2s ease;
+}
+
+.linkpath{
+    text-decoration: none;
+}
+
+.action-btn i {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}
+
+.btn {
+    border: none;
+    background: white;
+    padding: 10px 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.read {
+    color: #9d2d2c;
+}
+
+.download {
+    color: #9d2d2c;
+}

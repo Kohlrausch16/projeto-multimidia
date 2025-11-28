@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jornal do Minimundo</title>
+    <link rel="stylesheet" href="./styles/jornalstyles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <h1 class="title">Jornal do Minimundo</h1>
+    <hr>
+
+    <div class="newspaper-grid" id="newspaperGrid">
+        <!-- Jornais serão carregados dinamicamente via JS -->
+    </div>
+
+    <!-- Painel que abre ao clicar -->
+    <div id="editionPanel" class="edition-panel hidden">
+        <div class="panel-content">
+            <img id="panelImg" src="" alt="Edição">
+            <div class="panel-text">
+                <h2 id="panelTitle">Edição</h2>
+                <p id="panelDesc">Descrição...</p>
+            </div>
+
+            <div class="panel-actions">
+                <a class="linkpath" href="">
+                    <button class="action-btn">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>Ler</span>
+                    </button>
+                </a>
+
+                <button class="action-btn">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Baixar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script/jornalscript.js"></script>
+    <script src="./script/script.js"></script>
+</body>
+</html>
