@@ -5,14 +5,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingressos - Minimundo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main class="main-content container">
-        <h1>Ingressos</h1>
+        <div class="page-header" style="background: transparent; border: none;">
+            <!-- Header content can be minimal or removed if not needed, keeping title for consistency -->
+        </div>
+
+        <div class="wizard-container">
+            <!-- Header with Logo -->
+            <div class="text-start mb-5">
+                <img src="assets/logo.png" alt="Minimundo" height="40">
+            </div>
+
+            <h2 class="text-center mb-5" style="color: #980E0E; font-weight: bold; font-family: 'Old Standard TT', serif;">Adquira já seu ingresso</h2>
+
+            <!-- Progress Bar -->
+            <div class="wizard-progress">
+                <div class="progress-line"></div>
+                <div class="progress-line-fill" id="progressLineFill" style="width: 0%;"></div>
+                
+                <div class="progress-step active" id="step1-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                    </svg>
+                </div>
+                <div class="progress-step" id="step2-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                    </svg>
+                </div>
+                <div class="progress-step" id="step3-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-ticket-perforated" viewBox="0 0 16 16">
+                        <path d="M4 4.85v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Z"/>
+                        <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 1 1 0-3 .5.5 0 0 0 .5-.5V4.5A1.5 1.5 0 0 0 14.5 3h-13ZM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9V4.5Z"/>
+                    </svg>
+                </div>
+                <div class="progress-step" id="step4-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Step 1: Date Selection -->
+            <div class="wizard-step active" id="step1">
+                <p class="text-center mb-4" style="font-size: 1.2rem; color: #666;">Selecione a data de sua visita:</p>
+                
+                <div class="calendar-header">Novembro - 2025</div>
+                
+                <div class="calendar-grid">
+                    <div class="calendar-day-header">Dom</div>
+                    <div class="calendar-day-header">Seg</div>
+                    <div class="calendar-day-header">Ter</div>
+                    <div class="calendar-day-header">Qua</div>
+                    <div class="calendar-day-header">Qui</div>
+                    <div class="calendar-day-header">Sex</div>
+                    <div class="calendar-day-header">Sab</div>
+                    
+                    <!-- Empty cells for previous month -->
+                    <div></div><div></div><div></div><div></div><div></div><div></div>
+                    
+                    <!-- Days -->
+                    <div class="calendar-day disabled">01</div>
+                    <div class="calendar-day disabled">02</div>
+                    <div class="calendar-day disabled">03</div>
+                    <div class="calendar-day disabled">04</div>
+                    <div class="calendar-day disabled">05</div>
+                    <div class="calendar-day disabled">06</div>
+                    <div class="calendar-day disabled">07</div>
+                    <div class="calendar-day disabled">08</div>
+                    <div class="calendar-day disabled">09</div>
+                    <div class="calendar-day disabled">10</div>
+                    <div class="calendar-day disabled">11</div>
+                    <div class="calendar-day disabled">12</div>
+                    <div class="calendar-day disabled">13</div>
+                    <div class="calendar-day disabled">14</div>
+                    <div class="calendar-day disabled">15</div>
+                    <div class="calendar-day disabled">16</div>
+                    <div class="calendar-day disabled">17</div>
+                    <div class="calendar-day disabled">18</div>
+                    <div class="calendar-day disabled">19</div>
+                    <div class="calendar-day disabled">20</div>
+                    <div class="calendar-day disabled">21</div>
+                    <div class="calendar-day disabled">22</div>
+                    <div class="calendar-day disabled">23</div>
+                    <div class="calendar-day disabled">24</div>
+                    <div class="calendar-day selected" onclick="selectDate(this)">25</div>
+                    <div class="calendar-day" onclick="selectDate(this)">26</div>
+                    <div class="calendar-day" onclick="selectDate(this)">27</div>
+                    <div class="calendar-day" onclick="selectDate(this)">28</div>
+                    <div class="calendar-day" onclick="selectDate(this)">29</div>
+                    <div class="calendar-day" onclick="selectDate(this)">30</div>
+                </div>
+
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #e0e0e0;"></div>
+                        <span>Dia indisponível</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #d68c8c;"></div>
+                        <span>Dia disponível</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #980E0E;"></div>
+                        <span>Dia selecionado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Time Selection -->
+            <div class="wizard-step" id="step2">
+                <p class="text-center mb-4" style="font-size: 1.2rem; color: #666;">Selecione o horário de sua visita:</p>
+                
+                <div class="time-grid">
+                    <button class="time-slot" onclick="selectTime(this)">09:30h</button>
+                    <button class="time-slot" onclick="selectTime(this)">10:30h</button>
+                    <button class="time-slot" onclick="selectTime(this)">11:30h</button>
+                    <button class="time-slot" onclick="selectTime(this)">12:30h</button>
+                    <button class="time-slot selected" onclick="selectTime(this)">13:30h</button>
+                    <button class="time-slot" onclick="selectTime(this)">14:30h</button>
+                    <button class="time-slot" onclick="selectTime(this)">15:30h</button>
+                    <button class="time-slot" onclick="selectTime(this)">16:30h</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Ticket Selection -->
+            <div class="wizard-step" id="step3">
+                <p class="text-center mb-4" style="font-size: 1.2rem; color: #666;">Selecione sua modalidade de entrada:</p>
+                
+                <div class="ticket-list">
+                    <div class="ticket-option" onclick="selectTicket(this)">
+                        <span>Inteira - adulto</span>
+                        <span class="ticket-price">R$ 190,00</span>
+                    </div>
+                    <div class="ticket-option" onclick="selectTicket(this)">
+                        <span>Meia entrada - infantil</span>
+                        <span class="ticket-price">R$ 95,00</span>
+                    </div>
+                    <div class="ticket-option selected" onclick="selectTicket(this)">
+                        <span>Meia entrada - estudante</span>
+                        <span class="ticket-price">R$ 95,00</span>
+                    </div>
+                    <div class="ticket-option" onclick="selectTicket(this)">
+                        <span>Meia entrada - idoso</span>
+                        <span class="ticket-price">R$ 95,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Confirmation -->
+            <div class="wizard-step" id="step4">
+                <div class="text-center py-5">
+                    <h3 class="mb-4" style="color: #333; font-weight: bold;">Compra confirmada!</h3>
+                    <p class="text-muted mb-5">Nossos habitantes estão ansiosos<br>para receber você!</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="wizard-buttons" id="wizardButtons">
+                <button class="btn btn-wizard btn-back" onclick="prevStep()">Voltar</button>
+                <button class="btn btn-wizard btn-confirm" onclick="nextStep()">Confirmar</button>
+            </div>
+        </div>
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<<<<<<< HEAD
     <script src="./script/script.js"></script>
+=======
+    <script src="script.js"></script>
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function updateUI() {
+            // Update Steps Visibility
+            for (let i = 1; i <= totalSteps; i++) {
+                const stepEl = document.getElementById(`step${i}`);
+                if (i === currentStep) {
+                    stepEl.classList.add('active');
+                } else {
+                    stepEl.classList.remove('active');
+                }
+            }
+
+            // Update Progress Bar
+            const progressPercentage = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            document.getElementById('progressLineFill').style.width = `${progressPercentage}%`;
+
+            // Update Indicators
+            for (let i = 1; i <= totalSteps; i++) {
+                const indicator = document.getElementById(`step${i}-indicator`);
+                if (i <= currentStep) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            }
+
+            // Update Buttons
+            const buttonsContainer = document.getElementById('wizardButtons');
+            if (currentStep === totalSteps) {
+                buttonsContainer.style.display = 'none';
+            } else {
+                buttonsContainer.style.display = 'flex';
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateUI();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+            }
+        }
+
+        function selectDate(element) {
+            if (element.classList.contains('disabled')) return;
+            
+            document.querySelectorAll('.calendar-day').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        function selectTime(element) {
+            document.querySelectorAll('.time-slot').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        function selectTicket(element) {
+            document.querySelectorAll('.ticket-option').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+    </script>
+>>>>>>> e357c3889eb1651b472b1d37acde990896a8963d
 </body>
 </html>
