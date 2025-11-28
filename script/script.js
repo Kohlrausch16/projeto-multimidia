@@ -17,8 +17,8 @@ function createNavbar() {
                 <li><a href="ingressos.html">Ingressos</a></li>
                 <li><a href="parque.html">O Parque</a></li>
                 <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="grife.html">Grife</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="https://grife.minimundo.com.br/l">Grife</a></li>
+                <li><a href="login.html">Entrar</a></li>
             </ul>
         </div>
     </nav>

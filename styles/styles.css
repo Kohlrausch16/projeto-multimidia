@@ -7,7 +7,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
-    background: #ffffff;
+    background-color: #F6F5F2;
     color: #333;
 }
 
@@ -22,9 +22,8 @@ body {
     z-index: 1000;
     
     /* Efeito vítreo (glassmorphism) */
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
     
     /* Bordas arredondadas */
     border-radius: 20px;
@@ -79,22 +78,19 @@ body {
 /* Hover vermelho vinho */
 .nav-menu li a:hover {
     background: transparent;
-    color: #980E0E; /* Vermelho vinho vibrante */
+    color: #980e0ec5; /* Vermelho vinho vibrante */
     text-shadow: 0 0 1px rgba(152, 14, 14, 0.2);
-    transform: translateY(-2px);
 }
 
 .nav-menu li a.active {
-    background: rgba(152, 14, 14, 0.1);
     color: #980E0E;
-    border: 1px solid rgba(152, 14, 14, 0.2);
 }
 
 /* Hero Section para Home - Gradiente */
 .hero-background {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 60%, #ffffff 100%), url('assets/palacio.png');
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 60%, #ffffff 100%), url('../assets/palacio.png');
     background-size: cover;
     background-position: center;
     position: absolute;
