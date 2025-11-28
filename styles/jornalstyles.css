@@ -1,9 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat';
     background-color: #F6F5F2;
     margin: 0;
     padding: 20px;
-    /* remover isso: padding-top: 12%; */
 }
 
 hr{

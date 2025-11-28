@@ -521,7 +521,7 @@ body {
 
 /* Signup Section */
 .signup-section {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/parque.png');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../assets/parque-login.jpg');
     background-size: cover;
     background-position: center;
     padding: 100px 0;
