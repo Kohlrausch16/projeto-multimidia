@@ -1,11 +1,10 @@
 /* CONTAINER PRINCIPAL */
 .timeline-container {
     width: 100%;
-    margin: 0 auto;
-    padding: 20px 0 60px 0;
     display: flex;
     flex-direction: column;
-    font-family: 'Montserrat';
+    padding: 40px 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* BLOCO BASE */
@@ -15,63 +14,60 @@
     align-items: stretch;
     position: relative;
     overflow: hidden;
-    min-height: 260px;
+    min-height: 320px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: transform .8s ease, opacity .8s ease;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
-/* BLOCO INVERTIDO (imagem à esquerda) */
+/* Quando aparece na tela */
+.timeline-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Inversão de lado */
 .timeline-block.inverse {
-    grid-template-columns: 1fr 1fr;
-    direction: rtl; /* Inverte tudo sem precisar duplicar CSS */
+    direction: rtl;
 }
 
 .timeline-block.inverse > * {
-    direction: ltr; /* Mantém o conteúdo normal */
+    direction: ltr;
 }
 
-/* CORES DOS BLOCOS */
-.block-red {
-    background: #a61919;
-}
+/* CORES */
+.block-red { background: #980E0E; }
+.block-blue { background: #134A9C; }
+.block-green { background: #1B7F2A; }
+.block-yellow { background: #D7D92F; }
 
-.block-blue {
-    background: #134a9c;
-}
-
-.block-green {
-    background: #1b7f2a;
-}
-
-.block-yellow {
-    background: #d7d92f;
-}
-
-/* ÁREA DE TEXTO */
+/* TEXTO */
 .block-text {
-    padding: 40px;
-    color: white;
+    padding: 60px;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 2;
+    z-index: 3;
+}
+
+.block-yellow .block-text {
+    color: #222;
 }
 
 .block-text h2 {
-    font-size: 36px;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .block-text p {
-    font-size: 18px;
-    line-height: 1.4;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
-/* TEXTO ESCURO NO FUNDO AMARELO */
-.block-yellow .block-text {
-    color: #333;
-}
-
-/* ÁREA DE IMAGEM */
+/* IMAGEM */
 .block-img {
     position: relative;
     overflow: hidden;
@@ -79,31 +75,30 @@
 
 .block-img img {
     width: 100%;
-    height: 100%;
+    max-height: 350px;
     object-fit: cover;
 }
 
-/* EFEITO EM ZIG-ZAG (CORTE LATERAL) */
+/* FAIXA DIAGONAL DA COR */
 .timeline-block::after {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 140px;
-    transform: skewX(-25deg);
+    width: 180px;
     background: inherit;
-    right: -70px;
-    z-index: 1;
+    transform: skewX(-25deg);
+    right: -90px;
+    z-index: 2;
 }
 
 .timeline-block.inverse::after {
-    left: -70px;
+    left: -90px;
     right: auto;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 850px) {
-
+/* RESPONSIVO */
+@media (max-width: 900px) {
     .timeline-block,
     .timeline-block.inverse {
         grid-template-columns: 1fr;
@@ -111,17 +106,12 @@
         min-height: auto;
     }
 
-    .timeline-block::after,
-    .timeline-block.inverse::after {
-        display: none; /* remove desenho lateral no mobile */
-    }
-
-    .block-img {
-        height: 220px;
+    .timeline-block::after {
+        display: none;
     }
 
     .block-text {
-        padding: 25px;
+        padding: 30px;
     }
 
     .block-text h2 {
@@ -130,5 +120,9 @@
 
     .block-text p {
         font-size: 16px;
+    }
+
+    .block-img {
+        height: 230px;
     }
 }

@@ -391,11 +391,10 @@ body {
 
 /* Page Headers */
 .page-header {
-    background-color: #f8f9fa;
     padding: 60px 0 40px;
     margin-bottom: 40px;
     text-align: center;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid transparent;
 }
 
 .page-header h1 {
