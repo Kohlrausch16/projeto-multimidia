@@ -32,7 +32,7 @@ function createNavbar() {
 function createFooter() {
     const footerHTML = `
     <footer class="footer-new">
-        <div class="footer-bg-image" style="background-image: url('assets/parque.png');"></div>
+        <div class="footer-bg-image" style="background-image: url('./assets/parque.png');"></div>
         <div class="footer-overlay"></div>
         <div class="container footer-container position-relative">
             <div class="row">
